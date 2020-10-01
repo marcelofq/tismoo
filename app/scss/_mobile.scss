@@ -1,0 +1,175 @@
+@include media-breakpoint-down(md) {
+  .navbar {
+    position: absolute;
+    .navbar-collapse.collapse.show {
+      background-color: $primary;
+    }
+    .navbar-toggler {
+      border-color: transparent;
+      height: 50px;
+      padding: 0;
+      &:focus {
+        outline: none;
+      }
+      .animated-icon {
+        width: 30px;
+        height: 20px;
+        position: relative;
+        margin: 0px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+      }
+
+      .animated-icon span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+      }
+
+      .animated-icon {
+        span {
+          background: $primary;
+        }
+        &.open {
+          span {
+            background: white;
+          }
+        }
+      }
+      .animated-icon span:nth-child(1) {
+        top: 0px;
+      }
+
+      .animated-icon span:nth-child(2) {
+        top: 10px;
+      }
+
+      .animated-icon span:nth-child(3) {
+        top: 20px;
+      }
+
+      .animated-icon.open span:nth-child(1) {
+        top: 11px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+
+      .animated-icon.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+
+      .animated-icon.open span:nth-child(3) {
+        top: 11px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  .jumbotron {
+    background: transparent url(../images/hero-mobile.jpg) no-repeat center;
+    height: 667px;
+    .blue-box {
+      margin-top: 225px;
+      width: 230px;
+      height: 314px;
+      &__title {
+        position: absolute;
+        left: -80px;
+        top: 45px;
+        font-size: 46px;
+      }
+      &__text {
+        display: none;
+      }
+    }
+    .outer-text {
+      color: $white;
+      font-size: 11px;
+      margin-top: 40px;
+    }
+  }
+
+  .sobre {
+    flex-direction: column;
+    &__text {
+      width: 100%;
+      order: 2;
+      padding: 35px 37px 35px 37px;
+      h2 {
+        font-size: 40px;
+      }
+      h3 {
+        font-size: 13px;
+      }
+      p{
+        font-size: 20px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      order: 1;
+      &-copyright {
+        left: -30px;
+        top: 65px;
+        font-size: 11px;
+      }
+    }
+
+    &__btn {
+      font-size: 13px;
+      padding: 20px 0;
+      width: 100%;
+    }
+  }
+
+  .como-funciona {
+    flex-direction: column;
+    &__text {
+      width: 100%;
+      padding: 35px 37px 35px 37px;   
+      h2 {
+        font-size: 40px;
+      }
+      h3 {
+        font-size: 13px;
+      }
+      p{
+        font-size: 20px;
+      }
+    }
+    &__image {
+      width: 100%;
+      
+    }
+  }
+
+  .social-links {
+    display: none;
+  }
+}

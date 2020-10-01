@@ -15,26 +15,18 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-/*
-Styles
-*/
+@import "mobile";
+@import "desktop";
+
+/*******************/
+/*  Styles
+/*******************/
 body {
   font-family: $font-family-base;
   color: $text-color;
 }
 h2 {
   font-size: 2.6rem;
-}
-.btn {
-  border-radius: 25px;
-  padding: 12px 65px;
-  text-transform: uppercase;
-}
-
-@include media-breakpoint-up(lg) {
-  .container-fluid {
-    padding: 0 100px 0.5rem;
-  }
 }
 
 /*******************/
@@ -46,16 +38,6 @@ h2 {
   flex-direction: row;
   align-items: flex-start;
   z-index: 1;
-
-  @include media-breakpoint-up(lg) {
-    position: fixed;
-  }
-  @include media-breakpoint-down(lg) {
-    position: absolute;
-    .navbar-collapse.collapse.show{
-      background-color: $primary;
-    }
-  }
 
   .nav-item {
     display: flex;
@@ -127,126 +109,30 @@ h2 {
   .navbar-brand > img:nth-child(2) {
     display: none;
   }
-
-  .navbar-toggler {
-    border-color: transparent;
-    height: 90px;
-    width: 75px;
-    &:focus {
-      outline: none;
-    }
-    .animated-icon {
-      width: 30px;
-      height: 20px;
-      position: relative;
-      margin: 0px;
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-      -webkit-transition: 0.5s ease-in-out;
-      -moz-transition: 0.5s ease-in-out;
-      -o-transition: 0.5s ease-in-out;
-      transition: 0.5s ease-in-out;
-      cursor: pointer;
-    }
-
-    .animated-icon span {
-      display: block;
-      position: absolute;
-      height: 3px;
-      width: 100%;
-      border-radius: 9px;
-      opacity: 1;
-      left: 0;
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-      -webkit-transition: 0.25s ease-in-out;
-      -moz-transition: 0.25s ease-in-out;
-      -o-transition: 0.25s ease-in-out;
-      transition: 0.25s ease-in-out;
-    }
-
-    .animated-icon {
-      span {
-        background: $primary;
-      }
-      &.open {
-        span {
-          background: white;
-        }
-      }
-    }
-    .animated-icon span:nth-child(1) {
-      top: 0px;
-    }
-
-    .animated-icon span:nth-child(2) {
-      top: 10px;
-    }
-
-    .animated-icon span:nth-child(3) {
-      top: 20px;
-    }
-
-    .animated-icon.open span:nth-child(1) {
-      top: 11px;
-      -webkit-transform: rotate(135deg);
-      -moz-transform: rotate(135deg);
-      -o-transform: rotate(135deg);
-      transform: rotate(135deg);
-    }
-
-    .animated-icon.open span:nth-child(2) {
-      opacity: 0;
-      left: -60px;
-    }
-
-    .animated-icon.open span:nth-child(3) {
-      top: 11px;
-      -webkit-transform: rotate(-135deg);
-      -moz-transform: rotate(-135deg);
-      -o-transform: rotate(-135deg);
-      transform: rotate(-135deg);
-    }
-  }
 }
 
 /**************/
 /*  Destaque
 /**************/
 .jumbotron {
-  background: transparent url(../images/hero.jpg) no-repeat center;
   background-size: cover;
   border-radius: 0;
-  height: 1080px;
+
   padding: 0;
   margin-bottom: 0;
 
   .blue-box {
     position: relative;
-    margin-top: 280px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     background-color: transparentize($secondary, 0.3);
     color: $white;
-    width: 597px;
-    height: 698px;
+
     padding: 21px 37px;
 
     h1 {
-      position: absolute;
-      left: -105px;
-      top: 180px;
-      max-width: 620px;
-      font-size: 80px;
       font-weight: bold;
-      @include media-breakpoint-down(lg) {
-        top: 120px;
-      }
     }
     p {
       font-size: 0.875rem;
@@ -257,74 +143,89 @@ h2 {
 /**************/
 /*  Sobre
 /**************/
-#sobre {
-  & > div:first-child {
+.sobre {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+  &__text {
+    display: flex;
     justify-content: center;
     align-items: center;
-    .text {
-      width: 522px;
-      h3 {
-        font-size: 0.875rem;
-        font-weight: 500;
-      }
-      h2 {
-        font-family: "Cera Pro";
-        margin-bottom: 25px;
-      }
+    h3 {
+      font-weight: 500;
+    }
+    h2 {
+      font-family: "Cera Pro";
+      margin-bottom: 25px;
     }
   }
+  &__image {
+    position: relative;
+    &-copyright {
+      position: absolute;
+      transform: rotate(-90deg);
+    }
+  }
+  &__btn {
+    @extend .btn, .btn-outline-secondary;
+    border-radius: 30px;
+    text-transform: uppercase;
+  }
+}
 
-  // .bg-sobre {
-  //   position: relative;
-  //   @include media-breakpoint-up(md) {
-  //     background-image: url(../images/sobre.png);
-  //     background-position: center;
-  //     background-repeat: no-repeat;
-  //     background-size: contain;
-  //     min-width: 50%;
-  //     min-height: 610px;
-
-  //     img {
-  //       display: none;
-  //     }
-  //   }
-  //   .copyright {
-  //     position: absolute;
-  //     top: 56px;
-  //     right: -30px;
-  //     transform: rotate(-90deg);
-  //     font-size: 11px;
-  //     font-weight: 500;
-  //   }
-  // }
+/**************/
+/*  Como Funciona
+/**************/
+.como-funciona {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $purple;
+    h3 {
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-family: "Cera Pro";
+    }
+    p {
+      color: $white;
+    }
+  }
 }
 
 /*******************/
 /*  Como Funciona
 /*******************/
-#como-funciona {
-  & > div:last-child {
-    background-color: $purple;
-    justify-content: center;
-    align-items: center;
+// #como-funciona {
+//   & > div:last-child {
+//     background-color: $purple;
+//     justify-content: center;
+//     align-items: center;
 
-    .text {
-      max-width: 522px;
-      width: 100%;
-      h3 {
-        font-size: 0.875rem;
-        font-weight: 500;
-      }
-      h2 {
-        font-family: "Cera Pro";
-        margin-bottom: 25px;
-      }
-      p {
-        color: $white;
-      }
-    }
-  }
-}
+//     .text {
+//       max-width: 522px;
+//       width: 100%;
+//       h3 {
+//         font-size: 0.875rem;
+//         font-weight: 500;
+//       }
+//       h2 {
+//         font-family: "Cera Pro";
+//         margin-bottom: 25px;
+//       }
+//       p {
+//         color: $white;
+//       }
+//     }
+//   }
+// }
 
 /*******************/
 /*  Detalhes
@@ -490,12 +391,12 @@ h2 {
 /*******************/
 #baixar-app {
   padding: 152px 0;
-  .box{
+  .box {
     display: flex;
     justify-content: center;
     margin-right: 218px;
     margin-bottom: 30px;
-    .text{
+    .text {
       h2 {
         color: $secondary;
         font-family: "Cera Pro";
@@ -515,24 +416,22 @@ h2 {
 /*******************/
 /*  Footer
 /*******************/
-.footer{
+.footer {
   background-color: $purple;
   color: $white;
   padding: 140px 0;
 
   ul {
     list-style-type: none;
-    li{
-      a{
+    li {
+      a {
         color: $secondary;
       }
     }
   }
-  .social-links{
-    display: inline-flex;
-    a{
+  .social-links {
+    a {
       padding: 0 30px;
     }
   }
-
 }

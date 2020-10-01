@@ -6,11 +6,9 @@
     <title>Tismoo.me, muito além de uma rede social</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
-    
-      
-      <nav id="navbar" class="navbar navbar-expand-lg container-fluid w-100">
-        <a class="navbar-brand mr-lg-auto mt-lg-4" href="#">
+  <body>  
+      <nav id="navbar" class="navbar navbar-expand-md w-100">
+        <a class="navbar-brand mr-md-auto mt-md-4" href="#">
           <img
             src="images/tismoo-logo.png"
             width="80"
@@ -61,16 +59,15 @@
           </ul>
         </div>
       </nav>
-    
+    </div>
 
     <div class="jumbotron">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-6"></div>
-          <div class="col-6 d-flex justify-content-end">
+          <div class="col-10 offset-2 col-md-6 offset-md-6 d-flex justify-content-end">
             <div class="blue-box">
-              <h1 class="display-4">Uma rede social dedicada ao autismo*</h1>
-              <p>
+              <h1 class="blue-box__title">Uma rede social dedicada ao autismo*</h1>
+              <p class="blue-box__text">
                 * e outros transtornos neurológicos relacionados ao TEA, como a
                 Síndrome de Rett, CDKL5, Síndrome de Timothy, Síndrome do
                 X-Frágil, Síndrome de Angelman, Síndrome de Phelan-McDermid,
@@ -79,33 +76,33 @@
             </div>
           </div>
         </div>
+        <div class="outer-text"> * e outros transtornos neurológicos relacionados ao TEA, como a Síndrome de Rett, CDKL5, Síndrome de Timothy, Síndrome do X-Frágil, Síndrome de Angelman, Síndrome de Phelan-McDermid, entre outras.</div>
       </div>
     </div>
 
     <section
       id="sobre"
-      class="d-flex w-100 align-items-stretch justify-content-around"
+      class="sobre"
     >
-      <div class="d-flex w-50 order-2 order-md-1 flex-column">
-        <div class="text">
-          <h3 class="text-secondary">/ Sobre</h3>
-          <h2 class="text-primary">Tismoo.me, muito além de uma rede social</h2>
-          <p>
-            Organizar todas as suas informações nunca foi tão fácil. Tismoo.me é
-            uma plataforma de saúde e cuidado que se adapta às necessidades e ao
-            caso específico da sua família. Aqui é você quem decide o que é
-            relevante. <br />
-            É prático, seguro e totalmente digital.
-          </p>
-          <p>
-            <button type="button" class="btn btn-outline-secondary">
+        <div class="sobre__text">
+          <div class="sobre__text-content">
+            <h3 class="text-secondary">/ Sobre</h3>
+            <h2 class="text-primary">Tismoo.me, muito além de uma rede social</h2>
+            <p>
+              Organizar todas as suas informações nunca foi tão fácil. Tismoo.me é
+              uma plataforma de saúde e cuidado que se adapta às necessidades e ao
+              caso específico da sua família. Aqui é você quem decide o que é
+              relevante. <br />
+              É prático, seguro e totalmente digital.
+            </p>
+            <a href="#convite" class="sobre__btn">
               Como obter um convite
-            </button>
-          </p>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="d-flex w-50 order-md-2 bg-sobre">
-        <!-- <span class="copyright">by @pikisuperstar</span> -->
+    
+      <div class="sobre__image">
+        <div class="sobre__image-copyright">by @pikisuperstar</div>
         <img
           src="images/sobre.png"
           class="img-fluid"
@@ -114,19 +111,16 @@
       </div>
     </section>
 
-    <section
-      id="como-funciona"
-      class="d-flex w-100 align-items-stretch justify-content-around"
-    >
-      <div class="d-flex w-50 order-md-1">
+    <section id="como-funciona" class="como-funciona" >
+      <div class="como-funciona__image">
         <img
           src="images/como-funciona.png"
           class="img-fluid"
-          alt="Sobre Tismoo.me"
+          alt="Como funciona Tismoo.me"
         />
       </div>
-      <div class="d-flex w-50 order-2 order-md-2 flex-column">
-        <div class="text">
+      <div class="como-funciona__text">
+        <div class="como-funciona__text-content">
           <h3 class="text-white">/ Como funciona</h3>
           <h2 class="text-secondary">
             Saiba tudo o que a Tismoo.me pode fazer por você
@@ -137,10 +131,11 @@
             arquivos, criar e seguir grupos, tirar dúvidas e conectar-se com
             pessoas que poderão ajudá-lo(a) em sua jornada. Tudo o que você
             sempre buscou, e em um único lugar.
-          </p>
+          </p>   
         </div>
       </div>
     </section>
+
 
     <section id="detalhes" class="bg-secondary text-white">
       <div class="container">
